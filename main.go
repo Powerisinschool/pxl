@@ -1,4 +1,4 @@
-package main
+package pxl
 
 import (
 	"fmt"
@@ -67,12 +67,12 @@ func display(image string) {
 	}
 }
 
-func main() {
-	if len(os.Args) < 2 {
-		fmt.Printf("Usage: %s <filename>...\n\n", os.Args[0])
-		fmt.Println("Close the image with <ESC> or by pressing 'q'.")
-		os.Exit(1)
-	}
+func Render(images []string) {
+	// if len(os.Args) < 2 {
+	// 	fmt.Printf("Usage: %s <filename>...\n\n", os.Args[0])
+	// 	fmt.Println("Close the image with <ESC> or by pressing 'q'.")
+	// 	os.Exit(1)
+	// }
 
 	err := termbox.Init()
 	if err != nil {
@@ -81,7 +81,7 @@ func main() {
 	defer termbox.Close()
 	termbox.SetOutputMode(termbox.Output256)
 
-	for i := 1; i < len(os.Args); i++ {
-		display(os.Args[i])
+	for i := 1; i < len(images); i++ {
+		display(images[i])
 	}
 }
