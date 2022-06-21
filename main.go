@@ -1,9 +1,7 @@
 package pxl
 
 import (
-	"fmt"
 	"image"
-	"os"
 	"time"
 
 	_ "image/jpeg"
@@ -68,11 +66,6 @@ func display(image string) {
 }
 
 func Render(images []string) {
-	// if len(os.Args) < 2 {
-	// 	fmt.Printf("Usage: %s <filename>...\n\n", os.Args[0])
-	// 	fmt.Println("Close the image with <ESC> or by pressing 'q'.")
-	// 	os.Exit(1)
-	// }
 
 	err := termbox.Init()
 	if err != nil {
