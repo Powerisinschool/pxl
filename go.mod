@@ -1,4 +1,4 @@
-module github.com/Powerisinschool/pixel-go
+module github.com/Powerisinschool/pxl
 
 go 1.18
 
