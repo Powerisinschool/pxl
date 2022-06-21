@@ -65,11 +65,11 @@ func display(image string) {
 	}
 }
 
-func Render(images []string) {
+func Render(images []string) error {
 
 	err := termbox.Init()
 	if err != nil {
-		panic(err)
+		return err
 	}
 	defer termbox.Close()
 	termbox.SetOutputMode(termbox.Output256)
@@ -77,4 +77,5 @@ func Render(images []string) {
 	for i := 1; i < len(images); i++ {
 		display(images[i])
 	}
+	return nil
 }
